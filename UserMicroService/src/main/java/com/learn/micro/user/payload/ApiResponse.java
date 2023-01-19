@@ -2,6 +2,7 @@ package com.learn.micro.user.payload;
 
 import lombok.*;
 import org.springframework.http.HttpStatus;
+
 @Getter
 @Setter
 @AllArgsConstructor
