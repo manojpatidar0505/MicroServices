@@ -1,4 +1,4 @@
-package com.learn.micro.hotel.entity;
+package com.learn.micro.rating.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

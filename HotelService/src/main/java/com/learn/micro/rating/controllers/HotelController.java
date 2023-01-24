@@ -1,7 +1,7 @@
-package com.learn.micro.hotel.controllers;
+package com.learn.micro.rating.controllers;
 
-import com.learn.micro.hotel.entity.Hotel;
-import com.learn.micro.hotel.service.HotelService;
+import com.learn.micro.rating.entity.Hotel;
+import com.learn.micro.rating.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.learn.micro.hotel;
+package com.learn.micro.rating;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

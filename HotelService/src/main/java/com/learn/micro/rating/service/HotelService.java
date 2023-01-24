@@ -1,6 +1,6 @@
-package com.learn.micro.hotel.service;
+package com.learn.micro.rating.service;
 
-import com.learn.micro.hotel.entity.Hotel;
+import com.learn.micro.rating.entity.Hotel;
 
 import java.util.List;
 

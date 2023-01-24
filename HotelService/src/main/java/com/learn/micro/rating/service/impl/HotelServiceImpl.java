@@ -1,9 +1,9 @@
-package com.learn.micro.hotel.service.impl;
+package com.learn.micro.rating.service.impl;
 
-import com.learn.micro.hotel.entity.Hotel;
-import com.learn.micro.hotel.exception.ResourceNotFoundException;
-import com.learn.micro.hotel.repository.HotelRepository;
-import com.learn.micro.hotel.service.HotelService;
+import com.learn.micro.rating.entity.Hotel;
+import com.learn.micro.rating.exception.ResourceNotFoundException;
+import com.learn.micro.rating.repository.HotelRepository;
+import com.learn.micro.rating.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

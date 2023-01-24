@@ -1,4 +1,4 @@
-package com.learn.micro.hotel.exception;
+package com.learn.micro.rating.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String mesaage) {
