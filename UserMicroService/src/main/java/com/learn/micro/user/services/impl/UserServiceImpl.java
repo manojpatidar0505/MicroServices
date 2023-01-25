@@ -6,6 +6,7 @@ import com.learn.micro.user.entity.User;
 import com.learn.micro.user.exception.ResourceNotFoundException;
 import com.learn.micro.user.repository.UserRepository;
 import com.learn.micro.user.services.UserService;
+import com.learn.micro.user.services.external.services.HotelService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private HotelService hotelService;
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -50,9 +54,7 @@ public class UserServiceImpl implements UserService {
         List<Rating> ratingLis = Arrays.stream(list).collect(Collectors.toList());
         logger.info("Ratings:{}", list.toString());
         List<Rating> ratingList = ratingLis.stream().map(rating -> {
-            String hotelUrl = "http://HOTEL-SERVICE/hotels/";
-            ResponseEntity<Hotel> forEntity = restTemplate.getForEntity(hotelUrl + rating.getHotelId(), Hotel.class);
-            Hotel hotel = forEntity.getBody();
+            Hotel hotel = hotelService.getHotel(rating.getHotelId());
             rating.setHotel(hotel);
             return rating;
         }).collect(Collectors.toList());
