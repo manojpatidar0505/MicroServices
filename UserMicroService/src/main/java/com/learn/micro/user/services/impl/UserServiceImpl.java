@@ -45,12 +45,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUser(String userId) {
         User user = repository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("Record Not found against requested id " + userId));
-        String url = "http://localhost:8083/ratings/users/" + userId;
+        String url = "http://RATING-SERVICE/ratings/users/" + userId;
         Rating[] list = restTemplate.getForObject(url, Rating[].class);
         List<Rating> ratingLis = Arrays.stream(list).collect(Collectors.toList());
         logger.info("Ratings:{}", list.toString());
         List<Rating> ratingList = ratingLis.stream().map(rating -> {
-            String hotelUrl = "http://localhost:8082/hotels/";
+            String hotelUrl = "http://HOTEL-SERVICE/hotels/";
             ResponseEntity<Hotel> forEntity = restTemplate.getForEntity(hotelUrl + rating.getHotelId(), Hotel.class);
             Hotel hotel = forEntity.getBody();
             rating.setHotel(hotel);
