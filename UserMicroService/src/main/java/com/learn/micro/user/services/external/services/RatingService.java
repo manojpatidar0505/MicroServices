@@ -14,6 +14,6 @@ public interface RatingService {
     @PostMapping("/ratings")
     Rating createRating(Rating rating);
 
-    
+
 
 }
